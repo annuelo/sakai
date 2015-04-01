@@ -28,8 +28,9 @@
     <h:panelGrid styleClass="sectionContainerNav" columns="1" columnClasses="sectionLeftNav,sectionRightNav">
         <t:div>
             <h:inputText id="search" value="#{rosterBean.searchText}"
-                onfocus="clearIfDefaultString(this, '#{msgs.roster_search_text}')"/>
-            <h:commandButton value="#{msgs.roster_search_button}" actionListener="#{rosterBean.search}"/>
+                onfocus="clearIfDefaultString(this, '#{msgs.roster_search_text}')"
+                onkeypress="if (event.keyCode == 13) {event.preventDefault(); document.getElementById('rosterForm:buttonSearch').click();}" />
+            <h:commandButton id="buttonSearch" value="#{msgs.roster_search_button}" actionListener="#{rosterBean.search}"/>
             <h:commandButton value="#{msgs.roster_clear_button}" actionListener="#{rosterBean.clearSearch}"/>
         </t:div>
         
