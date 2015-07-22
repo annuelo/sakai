@@ -14598,9 +14598,18 @@ public class AssignmentAction extends PagedResourceActionII
 				{
 					try
 					{
-						Integer intPoints = Integer.parseInt(grade);
-						if (intPoints.intValue() > 0) {
+						Integer.parseInt(grade);
+						
+						int lenght = grade.length();
+						if (lenght > dec) {
 							grade = grade.substring(0, grade.length() - dec) + decSeparator + grade.substring(grade.length() - dec);
+						}
+						else {
+							String newGrade = "0" + decSeparator;
+							for (int i=lenght; i<dec; i++) {
+								newGrade = newGrade + "0";
+							}
+							grade = newGrade + grade;
 						}
 					}
 					catch (NumberFormatException e)

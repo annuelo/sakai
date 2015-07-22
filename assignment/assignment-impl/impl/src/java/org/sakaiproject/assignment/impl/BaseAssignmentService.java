@@ -11730,7 +11730,17 @@ public abstract class BaseAssignmentService implements AssignmentService, Entity
 					{
 						Integer.parseInt(grade);
 						// if point grade, display the grade with factor decimal place
-						decimal_gradePoint =  grade.substring(0, grade.length() - dec) + "." + grade.substring(grade.length() - dec);
+						int lenght = grade.length();
+						if (lenght > dec) {
+							decimal_gradePoint =  grade.substring(0, grade.length() - dec) + "." + grade.substring(grade.length() - dec);
+						}
+						else {
+							String newGrade = "0.";
+							for (int i=lenght; i<dec; i++) {
+								newGrade = newGrade + "0";
+							}
+							decimal_gradePoint = newGrade + grade;
+						}
 					}
 					catch (NumberFormatException e) {
 						try {
