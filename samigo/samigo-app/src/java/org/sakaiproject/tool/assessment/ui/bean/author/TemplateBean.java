@@ -51,7 +51,6 @@ public class TemplateBean implements Serializable
   private HashMap values = new HashMap();
   private String newName;
   private String templateName;
-  private String templateAuthor;
   private String templateDescription;
   private String itemAccessType = "2";
   private String displayChunking = "1";
@@ -297,26 +296,6 @@ public class TemplateBean implements Serializable
   public String getTemplateName()
   {
     return checker(templateName, "");
-  }
-
-  /**
-   * suthor
-   *
-   * @param newAuthor aquthor
-   */
-  public void setTemplateAuthor(String newAuthor)
-  {
-    templateAuthor = newAuthor;
-  }
-
-  /**
-   * author
-   *
-   * @return author
-   */
-  public String getTemplateAuthor()
-  {
-    return checker(templateAuthor, "");
   }
 
   /**
