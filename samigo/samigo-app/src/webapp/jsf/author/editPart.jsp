@@ -117,6 +117,9 @@
 
             <%-- Scoring --%>
             <t:fieldset styleClass="roundedBorder" legend="#{authorMessages.scoring}" rendered="#{sectionBean.type == '2'}">
+                <t:div id="noteOption" rendered="#{sectionBean.type == '2'}">
+                    <h:outputText rendered="#{sectionBean.type == '2'}" value="#{authorMessages.random_draw_note}"/>
+                </t:div>
                 <t:div id="pointsOption" rendered="#{sectionBean.type == '2'}">
                     <h:outputText rendered="#{sectionBean.type == '2'}" value="#{authorMessages.random_draw_correct_prefix}"/>
                     <h:inputText rendered="#{sectionBean.type == '2'}" id="numPointsRandom" disabled="#{sectionBean.type == '1' || !author.isEditPendingAssessmentFlow}" value="#{sectionBean.randomPartScore}" styleClass="ConvertPoint"/>
